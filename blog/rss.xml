@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Maria Gilca – Technical Writer Blog</title>
+        <link>https://mariagilca.github.io/portfolio/blog</link>
+        <description>Maria Gilca – Technical Writer Blog</description>
+        <lastBuildDate>Thu, 20 Nov 2025 03:22:09 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Designing technical docs with gradients (without sacrificing clarity)]]></title>
+            <link>https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients</link>
+            <guid>https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients</guid>
+            <pubDate>Thu, 20 Nov 2025 03:22:09 GMT</pubDate>
+            <description><![CDATA[Practical steps I use to bring nebula gradients and glassmorphism into technical documentation while keeping accessibility top of mind.]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="structure-first-gradients-second">Structure first, gradients second<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients#structure-first-gradients-second" class="hash-link" aria-label="Direct link to Structure first, gradients second" title="Direct link to Structure first, gradients second" translate="no">​</a></h2>
+<p>Break pages into predictable sections (<code>PageSection</code>, <code>GlassCard</code>, <code>Grid</code>). Once the hierarchy is obvious you can layer gradients behind them. In Docusaurus, I keep gradients inside dedicated components so color tokens remain reusable and easy to update.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-gradients-to-guide-attention">Use gradients to guide attention<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients#use-gradients-to-guide-attention" class="hash-link" aria-label="Direct link to Use gradients to guide attention" title="Direct link to Use gradients to guide attention" translate="no">​</a></h2>
+<p>Instead of drenching the whole viewport, anchor gradients in the corners. In my hero sections I position blurred <code>ColorBlob</code> components to highlight CTAs or diagrams. Motion makes gradients feel alive, so add subtle transforms on hover or scroll to reward interaction.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="keep-glassmorphism-readable">Keep glassmorphism readable<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients#keep-glassmorphism-readable" class="hash-link" aria-label="Direct link to Keep glassmorphism readable" title="Direct link to Keep glassmorphism readable" translate="no">​</a></h2>
+<p>Transparency is tricky for docs because we render code blocks, tables, and diagrams. Add thicker borders (<code>--color-border-subtle</code>) and drop shadows behind glass cards. Pair that with high-contrast text colors and generous padding; your readers will thank you.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-the-design-system-like-any-other-feature">Document the design system like any other feature<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients#document-the-design-system-like-any-other-feature" class="hash-link" aria-label="Direct link to Document the design system like any other feature" title="Direct link to Document the design system like any other feature" translate="no">​</a></h2>
+<p>Writers should know how to use the gradient language. I document examples, dos/don'ts, and token references in the repo so future contributors stay on-brand without pinging a designer.</p>]]></content:encoded>
+            <category>Design</category>
+            <category>Accessibility</category>
+            <category>UX writing</category>
+        </item>
+        <item>
+            <title><![CDATA[Treating Docusaurus like a docs-as-code platform]]></title>
+            <link>https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code</link>
+            <guid>https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code</guid>
+            <pubDate>Thu, 20 Nov 2025 03:22:09 GMT</pubDate>
+            <description><![CDATA[How I wire review gates, testing, and visual polish into a Docusaurus repo so technical writers can ship like engineers.]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="align-docs-velocity-with-product-velocity">Align docs velocity with product velocity<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code#align-docs-velocity-with-product-velocity" class="hash-link" aria-label="Direct link to Align docs velocity with product velocity" title="Direct link to Align docs velocity with product velocity" translate="no">​</a></h2>
+<p>Docs-as-code succeeds only when writers share the same branching rituals as engineers. Mirror the product repo: one <code>main</code> branch, short-lived feature branches, and required status checks. Docusaurus plays nicely when you split configuration (<code>docusaurus.config.js</code>, <code>sidebars.js</code>) from content so diffs stay readable.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="keep-builds-fast-and-opinionated">Keep builds fast and opinionated<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code#keep-builds-fast-and-opinionated" class="hash-link" aria-label="Direct link to Keep builds fast and opinionated" title="Direct link to Keep builds fast and opinionated" translate="no">​</a></h2>
+<p>Add GitHub Actions jobs for linting MDX, validating links, and generating preview deploys with <code>docusaurus build</code>. Cache <code>node_modules</code> and the <code>.docusaurus</code> output so builds feel instant. A fast signal keeps reviewers engaged.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="make-visual-qa-effortless">Make visual QA effortless<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code#make-visual-qa-effortless" class="hash-link" aria-label="Direct link to Make visual QA effortless" title="Direct link to Make visual QA effortless" translate="no">​</a></h2>
+<p>Writers should not guess how gradients or tokens appear on production. Generate preview URLs, but also add Storybook-like MDX playgrounds for components (<code>GlassCard</code>, <code>TagPill</code>, hero sections). When components evolve the team updates them once and every page inherits the change.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="capture-tribal-knowledge-in-docs">Capture tribal knowledge in docs<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code#capture-tribal-knowledge-in-docs" class="hash-link" aria-label="Direct link to Capture tribal knowledge in docs" title="Direct link to Capture tribal knowledge in docs" translate="no">​</a></h2>
+<p>CI secrets, content strategy decisions, voice/tone panels—even launch checklists—belong in the repo. Use MDX admonitions (<code>:::tip</code>) to highlight tribal knowledge, and include runnable snippets so future contributors can extend your work without Slacking you.</p>]]></content:encoded>
+            <category>Docusaurus</category>
+            <category>Docs-as-code</category>
+            <category>CI/CD</category>
+        </item>
+    </channel>
+</rss>

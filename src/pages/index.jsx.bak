@@ -1,0 +1,91 @@
+import React from 'react';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import Layout from '@theme/Layout';
+import InteractiveHero from '../components/InteractiveHero';
+import PageSection from '../components/PageSection';
+import styles from './index.module.css';
+
+const focusAreas = [
+  {
+    title: 'Docs accelerators',
+    description: 'Deployable Docusaurus kits with linting, previews, and writer onboarding baked in.',
+  },
+  {
+    title: 'Automation rituals',
+    description: 'CI/CD, localization syncs, and change detection workflows that guard every release.',
+  },
+  {
+    title: 'Narrative visuals',
+    description: 'Architecture diagrams, UI storyboards, and demo scripts that mirror product polish.',
+  },
+];
+
+const quickLinks = [
+  {
+    title: 'View the portfolio',
+    description: 'Sample architecture stories, CI/CD playbooks, and localization ops in MDX.',
+    href: '/docs/portfolio/overview',
+  },
+  {
+    title: 'Read the blog',
+    description: 'Short dispatches on systems docs, Arcade-style walkthroughs, and tooling notes.',
+    href: '/blog',
+  },
+  {
+    title: 'Say hello',
+    description: 'Plan a content sprint or invite me into your docs repo for rapid pairing.',
+    href: '/contact',
+  },
+];
+
+export default function Home() {
+  return (
+    <Layout
+      title="Maria Gilca portfolio"
+      description="Docs-as-code, CI/CD, localization, and architecture storytelling for fast-moving product teams.">
+      <main>
+        <InteractiveHero />
+
+        <PageSection id="focus" className={clsx('simple-section', styles.simpleSection)}>
+          <div className={clsx(styles.sectionHeader, 'simple-section__header')}>
+            <p className={styles.eyebrow}>Focus</p>
+            <h2>Clear docs, fewer moving parts</h2>
+            <p>
+              I plug into product squads as the docs-as-code lead—shipping systems, visuals, and automation without
+              extra ceremony.
+            </p>
+          </div>
+          <div className={styles.simpleGrid}>
+            {focusAreas.map((area) => (
+              <article key={area.title} className={clsx(styles.simpleCard, 'simple-card')}>
+                <h3>{area.title}</h3>
+                <p>{area.description}</p>
+              </article>
+            ))}
+          </div>
+        </PageSection>
+
+        <PageSection
+          id="links"
+          className={clsx('simple-section', 'simple-section--cta', styles.simpleSection, styles.ctaSection)}>
+          <div className={clsx(styles.sectionHeader, 'simple-section__header')}>
+            <p className={styles.eyebrow}>Next steps</p>
+            <h2>Pick the path that fits</h2>
+          </div>
+          <div className={styles.simpleGrid}>
+            {quickLinks.map((link) => (
+              <Link key={link.title} to={link.href} className={clsx(styles.linkCard, 'link-card')}>
+                <div>
+                  <h3>{link.title}</h3>
+                  <p>{link.description}</p>
+                </div>
+                <span>→</span>
+              </Link>
+            ))}
+          </div>
+        </PageSection>
+      </main>
+    </Layout>
+  );
+}

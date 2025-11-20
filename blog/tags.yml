@@ -1,0 +1,29 @@
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Tutorials and patterns for building with Docusaurus v3.
+
+docs-as-code:
+  label: Docs-as-code
+  permalink: /docs-as-code
+  description: Workflows that treat docs like production software.
+
+ci/cd:
+  label: CI/CD
+  permalink: /ci-cd
+  description: Pipelines, preview builds, and release automation for documentation.
+
+design:
+  label: Design
+  permalink: /docs-design
+  description: Visual systems, gradients, and UX writing craft.
+
+accessibility:
+  label: Accessibility
+  permalink: /accessibility
+  description: Ensuring colorful docs stay readable and inclusive.
+
+ux-writing:
+  label: UX writing
+  permalink: /ux-writing
+  description: Microcopy, structure, and task flows that respect the reader.

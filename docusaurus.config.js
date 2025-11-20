@@ -30,7 +30,7 @@ deploymentBranch: 'gh-pages',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'maria-gilca', // TODO: make sure this matches your actual GitHub username/owner
+  organizationName: 'mariagilca', // TODO: make sure this matches your actual GitHub username/owner
   projectName: 'portfolio',
   deploymentBranch: 'gh-pages', // default branch used for GitHub Pages
 

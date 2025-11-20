@@ -9,7 +9,12 @@ export default function FocusModeToggle({className}) {
   return (
     <button
       type="button"
-      className={clsx('button button--sm', styles.focusModeToggle, isFocusMode && styles.focusModeToggleActive, className)}
+      className={clsx(
+        'button button--secondary button--sm focus-mode-toggle',
+        styles.focusModeToggle,
+        isFocusMode && styles.focusModeToggleActive,
+        className,
+      )}
       onClick={toggleFocusMode}
       aria-pressed={isFocusMode}>
       <span className={styles.focusModeLabel}>Focus Mode</span>

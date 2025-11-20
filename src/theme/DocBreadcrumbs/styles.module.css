@@ -17,3 +17,6 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+.focusModeToggle {
+  flex-shrink: 0;
+}

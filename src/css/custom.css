@@ -41,8 +41,6 @@ body.focus-mode-active {
   background-color: #ffffff;
 }
 
-body.focus-mode-active .navbar,
-body.focus-mode-active .footer,
 body.focus-mode-active .theme-doc-sidebar-container,
 body.focus-mode-active .theme-doc-sidebar-menu,
 body.focus-mode-active .theme-doc-breadcrumbs,
@@ -55,6 +53,13 @@ body.focus-mode-active .theme-doc-toc-desktop {
   transition: opacity 200ms ease;
 }
 
+body.focus-mode-active .navbar,
+body.focus-mode-active .navbar__placeholder,
+body.focus-mode-active footer,
+body.focus-mode-active .theme-layout-footer {
+  display: none !important;
+}
+
 body.focus-mode-active .heroContainer,
 body.focus-mode-active .tabsSection,
 body.focus-mode-active .marqueeSection,
@@ -64,6 +69,27 @@ body.focus-mode-active .docMainContainer {
   background: rgba(255, 255, 255, 0.98) !important;
   box-shadow: none !important;
   border-color: rgba(15, 27, 70, 0.05) !important;
+}
+
+body.focus-mode-active .docMainContainer .container,
+body.focus-mode-active .docItemContainer {
+  padding-top: 1rem !important;
+  margin-top: 0 !important;
+}
+
+body.focus-mode-active .docItemContainer article {
+  text-align: left !important;
+}
+
+body.focus-mode-active .theme-doc-markdown,
+body.focus-mode-active .theme-doc-markdown p,
+body.focus-mode-active .theme-doc-markdown h1,
+body.focus-mode-active .theme-doc-markdown h2,
+body.focus-mode-active .theme-doc-markdown h3,
+body.focus-mode-active .theme-doc-markdown h4,
+body.focus-mode-active .theme-doc-markdown h5,
+body.focus-mode-active .theme-doc-markdown h6 {
+  text-align: left !important;
 }
 
 body.focus-mode-active .row {
@@ -566,4 +592,9 @@ html[data-theme='dark'] .footer {
   .hero-panel__footer {
     grid-template-columns: 1fr;
   }
+}
+
+
+body.focus-mode-active .focus-mode-toggle {
+  margin-left: 0 !important;
 }

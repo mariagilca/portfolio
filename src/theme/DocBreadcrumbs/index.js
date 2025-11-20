@@ -78,6 +78,7 @@ export default function DocBreadcrumbs() {
             })}
           </ul>
         </nav>
+        <FocusModeToggle className={styles.focusModeToggle} />
       </div>
     </>
   );

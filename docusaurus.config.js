@@ -20,8 +20,8 @@ const config = {
   },
 
 // GitHub Pages / production URL
-url: 'https://mariagilca.github.io',
-baseUrl: '/portfolio/',
+url: 'https://voix.md',
+baseUrl: '/',
 
 // GitHub pages deployment config.
 organizationName: 'mariagilca', // your real GitHub username
@@ -76,8 +76,9 @@ deploymentBranch: 'gh-pages',
     ({
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
-        respectPrefersColorScheme: true,
-        defaultMode: 'dark',
+        respectPrefersColorScheme: false,
+        defaultMode: 'light',
+        disableSwitch: true,
       },
       navbar: {
         title: 'Maria Gilca',
@@ -96,11 +97,6 @@ deploymentBranch: 'gh-pages',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {to: '/about', label: 'About', position: 'left'},
-          {
-            href: 'https://github.com/mariagilca',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {
@@ -128,20 +124,11 @@ deploymentBranch: 'gh-pages',
             items: [
               {
                 label: 'LinkedIn',
-                href: 'https://www.linkedin.com/in/anamaria-gilca',
+                href: 'https://www.linkedin.com/in/maria-gilca/',
               },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/mariagilca',
-              },
-            ],
-          },
-          {
-            title: 'Collaborate',
-            items: [
               {
                 label: 'Email',
-                href: 'mailto:hello@maria-gilca.com',
+                href: 'mailto:mariag@voix.com',
               },
             ],
           },
@@ -150,7 +137,6 @@ deploymentBranch: 'gh-pages',
       },
       prism: {
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
       },
     }),
 };

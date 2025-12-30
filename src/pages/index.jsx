@@ -51,19 +51,11 @@ function Hero() {
           <Link className="button button--primary button--lg" to="/docs/portfolio/overview">
             View Portfolio
           </Link>
-          <Link className="button button--secondary button--lg" to="mailto:hello@maria-gilca.com">
+          <Link className="button button--secondary button--lg" to="mailto:mariag@voix.com">
             Book Discovery
           </Link>
         </div>
-        <div
-          style={{
-            textAlign: 'left',
-            maxWidth: '700px',
-            margin: '0 auto',
-            borderRadius: '12px',
-            overflow: 'hidden',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
-          }}>
+        <div className={styles.heroCodeBlock}>
           <CodeBlock language="json" title="The Transformation">
 {`// BEFORE: Confusion
 { "err_cd": 404, "msg": "u_nf" }

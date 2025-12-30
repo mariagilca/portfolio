@@ -48,6 +48,17 @@
   margin-bottom: 3rem;
 }
 
+.heroCodeBlock {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: auto;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  -webkit-overflow-scrolling: touch;
+}
+
 .tabsSection {
   background: rgba(255, 255, 255, 0.5);
   padding: 4rem 2rem;
@@ -159,6 +170,20 @@
     font-size: 2.5rem;
   }
 
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttons :global(.button) {
+    width: 100%;
+    text-align: center;
+  }
+
+  .heroCodeBlock {
+    max-width: 100%;
+  }
+
   .tabsContainer {
     grid-template-columns: 1fr;
   }
@@ -168,6 +193,7 @@
     overflow-x: auto;
     border-right: none;
     border-bottom: 1px solid var(--arcade-border);
+    -webkit-overflow-scrolling: touch;
   }
 
   .tabButton {

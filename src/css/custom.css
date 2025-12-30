@@ -428,7 +428,7 @@ html[data-theme='dark'] .button--outline {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   box-shadow: none;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .navbar__inner {

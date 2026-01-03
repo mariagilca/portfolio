@@ -20,7 +20,7 @@ const config = {
   },
 
 // GitHub Pages / production URL
-url: 'https://voix.md',
+url: 'https://mariagilca.github.io',
 baseUrl: '/',
 
 // GitHub pages deployment config.

@@ -21,7 +21,7 @@ const config = {
 
 // GitHub Pages / production URL
 url: 'https://mariagilca.github.io',
-baseUrl: '/',
+baseUrl: '/portofolio',
 
 // GitHub pages deployment config.
 organizationName: 'mariagilca', // your real GitHub username

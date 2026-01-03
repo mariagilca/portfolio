@@ -19,20 +19,14 @@ const config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-// GitHub Pages / production URL
-url: 'https://mariagilca.github.io',
-baseUrl: '/portofolio',
-
-// GitHub pages deployment config.
-organizationName: 'mariagilca', // your real GitHub username
-projectName: 'portfolio',
-deploymentBranch: 'gh-pages',
+  // GitHub Pages / production URL
+  url: 'https://mariagilca.github.io',
+  baseUrl: 'portofolio',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'mariagilca', // TODO: make sure this matches your actual GitHub username/owner
+  organizationName: 'mariagilca', // your real GitHub username
   projectName: 'portfolio',
-  deploymentBranch: 'gh-pages', // default branch used for GitHub Pages
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
 

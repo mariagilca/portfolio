@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmariag=globalThis.webpackChunkmariag||[]).push([[903],{1912:o=>{o.exports=JSON.parse('{"blogBasePath":"/portfolio/blog","blogTitle":"Writing","authorsListPath":"/portfolio/blog/authors"}')}}]);

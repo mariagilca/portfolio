@@ -1,29 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://mariagilca.github.io/portfolio/blog</id>
-    <title>Maria Gilca – Technical Writer Blog</title>
-    <updated>2025-11-20T03:22:09.000Z</updated>
+    <id>https://mariagilca.github.io/portfolio/blog/</id>
+    <title>Writing by Maria Gilca</title>
+    <updated>2026-08-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://mariagilca.github.io/portfolio/blog"/>
-    <subtitle>Maria Gilca – Technical Writer Blog</subtitle>
+    <link rel="alternate" href="https://mariagilca.github.io/portfolio/blog/"/>
+    <subtitle>Notes on terminology, information architecture and treating documentation as software.</subtitle>
     <icon>https://mariagilca.github.io/portfolio/img/favicon.ico</icon>
+    <rights>© 2026 Maria Gilca.</rights>
     <entry>
-        <title type="html"><![CDATA[Designing technical docs with gradients (without sacrificing clarity)]]></title>
-        <id>https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients</id>
-        <link href="https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients"/>
-        <updated>2025-11-20T03:22:09.000Z</updated>
-        <summary type="html"><![CDATA[Practical steps I use to bring nebula gradients and glassmorphism into technical documentation while keeping accessibility top of mind.]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="structure-first-gradients-second">Structure first, gradients second<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients#structure-first-gradients-second" class="hash-link" aria-label="Direct link to Structure first, gradients second" title="Direct link to Structure first, gradients second" translate="no">​</a></h2>
-<p>Break pages into predictable sections (<code>PageSection</code>, <code>GlassCard</code>, <code>Grid</code>). Once the hierarchy is obvious you can layer gradients behind them. In Docusaurus, I keep gradients inside dedicated components so color tokens remain reusable and easy to update.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-gradients-to-guide-attention">Use gradients to guide attention<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients#use-gradients-to-guide-attention" class="hash-link" aria-label="Direct link to Use gradients to guide attention" title="Direct link to Use gradients to guide attention" translate="no">​</a></h2>
-<p>Instead of drenching the whole viewport, anchor gradients in the corners. In my hero sections I position blurred <code>ColorBlob</code> components to highlight CTAs or diagrams. Motion makes gradients feel alive, so add subtle transforms on hover or scroll to reward interaction.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="keep-glassmorphism-readable">Keep glassmorphism readable<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients#keep-glassmorphism-readable" class="hash-link" aria-label="Direct link to Keep glassmorphism readable" title="Direct link to Keep glassmorphism readable" translate="no">​</a></h2>
-<p>Transparency is tricky for docs because we render code blocks, tables, and diagrams. Add thicker borders (<code>--color-border-subtle</code>) and drop shadows behind glass cards. Pair that with high-contrast text colors and generous padding; your readers will thank you.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-the-design-system-like-any-other-feature">Document the design system like any other feature<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-with-gradients#document-the-design-system-like-any-other-feature" class="hash-link" aria-label="Direct link to Document the design system like any other feature" title="Direct link to Document the design system like any other feature" translate="no">​</a></h2>
-<p>Writers should know how to use the gradient language. I document examples, dos/don'ts, and token references in the repo so future contributors stay on-brand without pinging a designer.</p>]]></content>
+        <title type="html"><![CDATA[I rebuilt my docs site to be boring on purpose]]></title>
+        <id>https://mariagilca.github.io/portfolio/blog/designing-docs-for-restraint/</id>
+        <link href="https://mariagilca.github.io/portfolio/blog/designing-docs-for-restraint/"/>
+        <updated>2026-08-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I spent a while arguing that technical documentation could carry gradients and glassmorphism. Then I rebuilt this site without them, and here is what actually survived the rewrite.]]></summary>
+        <content type="html"><![CDATA[<p>For a while I argued that technical documentation could carry a bit of
+atmosphere (nebula gradients, glass panels, motion on scroll) as long as you
+kept the contrast honest. I built this site that way, and I don't think the
+argument was wrong exactly. It was just answering a question nobody had asked.</p>
+<p>Then I rebuilt the site with almost none of it. Below is what survived, because
+those parts turned out not to be about decoration at all.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="structure-first-and-it-turns-out-that-was-the-whole-thing">Structure first, and it turns out that was the whole thing<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-for-restraint/#structure-first-and-it-turns-out-that-was-the-whole-thing" class="hash-link" aria-label="Direct link to Structure first, and it turns out that was the whole thing" title="Direct link to Structure first, and it turns out that was the whole thing" translate="no">​</a></h2>
+<p>The original version of this advice was "break pages into predictable sections,
+<em>then</em> layer gradients behind them." The first half was doing all the work. Once
+the hierarchy is genuinely obvious, the gradient adds nothing a reader needs; and
+if the hierarchy isn't obvious, no amount of atmosphere rescues it.</p>
+<p>What replaced the gradients was spacing and one typographic rule: headings in one
+family, running prose in another, metadata in a third, and never mix them up. On
+this site sans is the interface voice, a serif carries every piece of prose, and
+mono is reserved for metadata: owner, date, term ID. A reader can now tell what
+<em>kind</em> of thing they're looking at before they read a word of it. That's the job
+I had been trying to give a background.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="transparency-was-never-the-accessible-option">Transparency was never the accessible option<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-for-restraint/#transparency-was-never-the-accessible-option" class="hash-link" aria-label="Direct link to Transparency was never the accessible option" title="Direct link to Transparency was never the accessible option" translate="no">​</a></h2>
+<p>The old post said glassmorphism in docs is "tricky" because we render code
+blocks, tables and diagrams over it, and recommended compensating with thicker
+borders and drop shadows.</p>
+<p>Read that back and it's a description of fighting your own design. Every
+compensating detail (heavier borders, stacked shadows, raised text
+contrast) existed to undo a problem transparency introduced. Solid surfaces and a single
+hairline border cost nothing and need no compensation. Contrast ratios stopped
+being something I had to check defensively and started being a property of the
+palette.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-is-a-content-decision">Performance is a content decision<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-for-restraint/#performance-is-a-content-decision" class="hash-link" aria-label="Direct link to Performance is a content decision" title="Direct link to Performance is a content decision" translate="no">​</a></h2>
+<p>The version of this site you're reading loads no web fonts. Not because
+self-hosting is hard, but because I sell documentation systems for teams who care
+whether their docs are fast, and a portfolio that spends 200kB on typefaces is
+making an argument against its author. The platform stacks render well, and the
+budget went to things a reader can actually use.</p>
+<p>The animated background went for the same reason. It was the most-praised thing
+on the old site and the least useful: it competed with first paint on exactly the
+page where someone decides whether to keep reading.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-the-design-system-like-any-other-feature">Document the design system like any other feature<a href="https://mariagilca.github.io/portfolio/blog/designing-docs-for-restraint/#document-the-design-system-like-any-other-feature" class="hash-link" aria-label="Direct link to Document the design system like any other feature" title="Direct link to Document the design system like any other feature" translate="no">​</a></h2>
+<p>This one I'd keep verbatim. Examples, dos and don'ts, and token references belong
+in the repo, so a future contributor stays consistent without asking a designer.
+The only change is that there is far less to document now, which is its own kind
+of win, and roughly the point.</p>
+<hr>
+<p>The honest summary: I was solving for how the site felt to build rather than how
+it felt to read. Those aren't the same problem, and only one of them is the
+reader's.</p>]]></content>
         <author>
             <name>Maria Gilca</name>
-            <uri>https://www.linkedin.com/in/anamaria-gilca</uri>
+            <email>mariag@voix.com</email>
+            <uri>https://mariagilca.github.io/portfolio/about/</uri>
         </author>
         <category label="Design" term="Design"/>
         <category label="Accessibility" term="Accessibility"/>
@@ -31,21 +70,44 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Treating Docusaurus like a docs-as-code platform]]></title>
-        <id>https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code</id>
-        <link href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code"/>
-        <updated>2025-11-20T03:22:09.000Z</updated>
-        <summary type="html"><![CDATA[How I wire review gates, testing, and visual polish into a Docusaurus repo so technical writers can ship like engineers.]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="align-docs-velocity-with-product-velocity">Align docs velocity with product velocity<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code#align-docs-velocity-with-product-velocity" class="hash-link" aria-label="Direct link to Align docs velocity with product velocity" title="Direct link to Align docs velocity with product velocity" translate="no">​</a></h2>
-<p>Docs-as-code succeeds only when writers share the same branching rituals as engineers. Mirror the product repo: one <code>main</code> branch, short-lived feature branches, and required status checks. Docusaurus plays nicely when you split configuration (<code>docusaurus.config.js</code>, <code>sidebars.js</code>) from content so diffs stay readable.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="keep-builds-fast-and-opinionated">Keep builds fast and opinionated<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code#keep-builds-fast-and-opinionated" class="hash-link" aria-label="Direct link to Keep builds fast and opinionated" title="Direct link to Keep builds fast and opinionated" translate="no">​</a></h2>
-<p>Add GitHub Actions jobs for linting MDX, validating links, and generating preview deploys with <code>docusaurus build</code>. Cache <code>node_modules</code> and the <code>.docusaurus</code> output so builds feel instant. A fast signal keeps reviewers engaged.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="make-visual-qa-effortless">Make visual QA effortless<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code#make-visual-qa-effortless" class="hash-link" aria-label="Direct link to Make visual QA effortless" title="Direct link to Make visual QA effortless" translate="no">​</a></h2>
-<p>Writers should not guess how gradients or tokens appear on production. Generate preview URLs, but also add Storybook-like MDX playgrounds for components (<code>GlassCard</code>, <code>TagPill</code>, hero sections). When components evolve the team updates them once and every page inherits the change.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="capture-tribal-knowledge-in-docs">Capture tribal knowledge in docs<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code#capture-tribal-knowledge-in-docs" class="hash-link" aria-label="Direct link to Capture tribal knowledge in docs" title="Direct link to Capture tribal knowledge in docs" translate="no">​</a></h2>
-<p>CI secrets, content strategy decisions, voice/tone panels—even launch checklists—belong in the repo. Use MDX admonitions (<code>:::tip</code>) to highlight tribal knowledge, and include runnable snippets so future contributors can extend your work without Slacking you.</p>]]></content>
+        <id>https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code/</id>
+        <link href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code/"/>
+        <updated>2025-11-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How I wire branching, review gates and CI into a Docusaurus repo so documentation ships on the product's schedule instead of after it.]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="align-docs-velocity-with-product-velocity">Align docs velocity with product velocity<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code/#align-docs-velocity-with-product-velocity" class="hash-link" aria-label="Direct link to Align docs velocity with product velocity" title="Direct link to Align docs velocity with product velocity" translate="no">​</a></h2>
+<p>Docs-as-code succeeds only when writers share the same branching rituals as
+engineers. Mirror the product repo: one <code>main</code> branch, short-lived feature
+branches, and required status checks. Docusaurus plays nicely when you split
+configuration (<code>docusaurus.config.js</code>, <code>sidebars.js</code>) from content, so diffs stay
+readable and a reviewer can see what actually changed.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="keep-builds-fast-and-opinionated">Keep builds fast and opinionated<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code/#keep-builds-fast-and-opinionated" class="hash-link" aria-label="Direct link to Keep builds fast and opinionated" title="Direct link to Keep builds fast and opinionated" translate="no">​</a></h2>
+<p>Add CI jobs for linting MDX, validating links, and generating preview deploys with
+<code>docusaurus build</code>. Cache <code>node_modules</code> and the <code>.docusaurus</code> output so builds
+feel instant: a fast signal keeps reviewers engaged, and a slow one teaches
+people to approve without looking.</p>
+<p>Two settings are worth making non-negotiable, because both only take effect in
+production builds and will otherwise fail silently in local development:</p>
+<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockTitle_OeMC">docusaurus.config.js</div><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token literal-property property" style="color:#36acaa">onBrokenLinks</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">'throw'</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token literal-property property" style="color:#36acaa">markdown</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token literal-property property" style="color:#36acaa">hooks</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token literal-property property" style="color:#36acaa">onBrokenMarkdownLinks</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">'throw'</span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">,</span><br></div></code></pre></div></div>
+<p>If a broken internal link can't fail the build, it will reach production. One
+caveat if your sitemap uses <code>lastmod</code>: it is resolved from git history, so a CI
+job checking out with the default shallow clone silently drops it. <code>fetch-depth: 0</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="make-visual-qa-effortless">Make visual QA effortless<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code/#make-visual-qa-effortless" class="hash-link" aria-label="Direct link to Make visual QA effortless" title="Direct link to Make visual QA effortless" translate="no">​</a></h2>
+<p>Writers should not have to guess how a component renders in production. Generate
+preview URLs for every branch, and keep a page in the repo that renders each
+shared component with real content, so the team updates it once and every page
+inherits the change.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="capture-tribal-knowledge-in-the-repo">Capture tribal knowledge in the repo<a href="https://mariagilca.github.io/portfolio/blog/docusaurus-docs-as-code/#capture-tribal-knowledge-in-the-repo" class="hash-link" aria-label="Direct link to Capture tribal knowledge in the repo" title="Direct link to Capture tribal knowledge in the repo" translate="no">​</a></h2>
+<p>CI secrets, content strategy decisions, voice and tone guidance, launch
+checklists: all of it belongs next to the content it governs. Use admonitions
+(<code>:::tip</code>) to mark the things someone will otherwise have to ask about, and
+include runnable snippets so a future contributor can extend your work without
+messaging you.</p>
+<p>The test of docs-as-code isn't whether the pipeline is elegant. It's whether
+documentation ships in the same release as the feature it describes.</p>]]></content>
         <author>
             <name>Maria Gilca</name>
-            <uri>https://www.linkedin.com/in/anamaria-gilca</uri>
+            <email>mariag@voix.com</email>
+            <uri>https://mariagilca.github.io/portfolio/about/</uri>
         </author>
         <category label="Docusaurus" term="Docusaurus"/>
         <category label="Docs-as-code" term="Docs-as-code"/>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import isoDateTime from '@site/src/lib/isoDateTime';
 
 /**
  * ProfilePage JSON-LD for /about.
@@ -21,8 +22,8 @@ export default function ProfileSchema({dateCreated, dateModified}) {
     '@id': `${siteRoot}about/#profilepage`,
     url: `${siteRoot}about/`,
     inLanguage: 'en',
-    dateCreated,
-    dateModified,
+    dateCreated: isoDateTime(dateCreated),
+    dateModified: isoDateTime(dateModified),
     mainEntity: {'@id': `${siteRoot}#person`},
     isPartOf: {'@id': `${siteRoot}#website`},
   };

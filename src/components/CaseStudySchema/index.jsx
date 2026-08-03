@@ -2,6 +2,7 @@ import React from 'react';
 import Head from '@docusaurus/Head';
 import {useLocation} from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import isoDateTime from '@site/src/lib/isoDateTime';
 
 /**
  * Emits TechArticle JSON-LD for a case study.
@@ -29,7 +30,7 @@ export default function CaseStudySchema({headline, description, datePublished}) 
     url: pageUrl,
     headline,
     description,
-    datePublished,
+    datePublished: isoDateTime(datePublished),
     inLanguage: 'en',
     image: `${siteRoot}img/social-card.png`,
     author: {'@id': `${siteRoot}#person`},

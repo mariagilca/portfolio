@@ -1,0 +1,343 @@
+.page {
+  /* Explicit width: this <main> is a content-sized flex item, so without it the
+     widest code line becomes the width of the whole document. */
+  width: 100%;
+  max-width: var(--w-content);
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 5.5rem) var(--gutter) var(--section-y);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  letter-spacing: var(--tr-meta);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 var(--space-md);
+}
+
+.header {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: var(--section-y);
+}
+
+.title {
+  font-size: var(--fs-h1);
+  letter-spacing: var(--tr-display);
+  margin: 0;
+  max-width: 24ch;
+}
+
+.lead {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 46ch;
+  margin: var(--space-lg) 0 0;
+}
+
+.note {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-3);
+  max-width: 64ch;
+  margin: var(--space-lg) 0 0;
+}
+
+.section {
+  padding: var(--section-y) 0 0;
+}
+
+.h2 {
+  font-size: var(--fs-h2);
+  letter-spacing: var(--tr-display);
+  margin: 0 0 var(--space-xl);
+}
+
+.body {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  color: var(--ink-2);
+  max-width: 64ch;
+  margin: 0 0 var(--space-lg);
+}
+
+.code {
+  max-width: 62rem;
+  margin: var(--space-xl) 0;
+}
+
+/* ==========================================================================
+   The decision table: the page's one memorable artefact.
+   Semantics come from role=table; layout is grid so the "why" line can sit
+   under each task name inside its own cell.
+   ========================================================================== */
+
+.table {
+  margin: 0 0 var(--space-xl);
+  border-top: 1px solid var(--rule-strong);
+}
+
+.thead,
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 7.5rem 9rem 7.5rem;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.thead {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--rule-strong);
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  letter-spacing: var(--tr-meta);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.thead > span + span,
+.cellMark,
+.cellGate {
+  text-align: center;
+}
+
+.row {
+  padding: var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--rule);
+  transition: background 200ms var(--ease);
+}
+
+.row:hover {
+  background: var(--accent-wash);
+}
+
+.cellTask {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  min-width: 0;
+}
+
+.taskName {
+  font-size: 1.0625rem;
+  font-weight: 550;
+  letter-spacing: var(--tr-heading);
+  color: var(--ink);
+}
+
+.taskWhy {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-3);
+  max-width: 58ch;
+}
+
+.cellMark,
+.cellGate {
+  padding-top: 0.3rem;
+}
+
+.dot,
+.dotHuman {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* A human-only row is deliberately a different mark, not a different colour;
+   it reads at a glance and still reads when colour is unavailable. */
+.dotHuman {
+  background: transparent;
+  border: 2px solid var(--ink-2);
+  width: 10px;
+  height: 10px;
+}
+
+.empty {
+  color: var(--rule-strong);
+  font-size: var(--fs-sm);
+}
+
+.gateAuto,
+.gateReview {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--rule-strong);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.gateAuto {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-wash);
+}
+
+.mobileLabel {
+  display: none;
+}
+
+.pullquote {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 34ch;
+  margin: var(--space-2xl) 0 0;
+  padding-left: var(--space-lg);
+  border-left: 2px solid var(--accent);
+}
+
+.pullquote code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--paper-sunken);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-xs);
+  padding: 0.1em 0.35em;
+  margin-left: 0.3em;
+}
+
+/* --- limits -------------------------------------------------------------- */
+
+.limits {
+  margin: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.limitRow {
+  display: grid;
+  grid-template-columns: 20rem minmax(0, 1fr);
+  gap: var(--space-sm) var(--space-2xl);
+  padding: var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--rule);
+}
+
+.limitRow dt {
+  font-size: 1.0625rem;
+  font-weight: 550;
+  letter-spacing: var(--tr-heading);
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.limitRow dd {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+
+/* --- closing ------------------------------------------------------------- */
+
+.closing {
+  margin-top: var(--section-y);
+  padding-top: var(--section-y);
+  border-top: 1px solid var(--rule);
+}
+
+.closingHeading {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: var(--ink);
+  max-width: 34ch;
+  margin: 0;
+}
+
+.closingActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg) var(--space-xl);
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+}
+
+.textAction {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45em;
+}
+
+.textAction:hover {
+  color: var(--accent);
+}
+
+.textAction span {
+  transition: translate 180ms var(--ease);
+}
+
+.textAction:hover span {
+  translate: 3px 0;
+}
+
+/* --- narrow -------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .limitRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+}
+
+@media (max-width: 820px) {
+  /* The header row can't survive the collapse, so each cell labels itself. */
+  .thead {
+    display: none;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .cellMark,
+  .cellGate {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-sm);
+    text-align: left;
+    padding-top: 0;
+  }
+
+  .mobileLabel {
+    display: inline;
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    letter-spacing: var(--tr-meta);
+    text-transform: uppercase;
+    color: var(--ink-3);
+    min-width: 8.5rem;
+  }
+
+  /* A row of dashes carries no information once stacked. */
+  .cellMark:has(.empty),
+  .cellGate:has(.empty) {
+    display: none;
+  }
+}

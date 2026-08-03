@@ -1,0 +1,99 @@
+---
+id: information-architecture-data-platform
+slug: /information-architecture-data-platform
+title: Rebuilding a data platform's documentation around its data
+sidebar_label: Information architecture
+sidebar_position: 2
+description: How I rebuilt documentation for OpenLM, a data-intensive SaaS platform, around its entities and data flows, with agreed definitions, a workable structure, metadata standards and written governance.
+keywords:
+  - information architecture
+  - data documentation
+  - metadata standards
+  - taxonomy design
+  - documentation governance
+image: /img/social-card.png
+---
+
+import CaseStudySchema from '@site/src/components/CaseStudySchema';
+
+<CaseStudySchema
+  headline="Rebuilding a data platform's documentation around its data"
+  description="Information architecture, agreed definitions, structure and metadata standards for OpenLM, a data-intensive SaaS platform."
+  datePublished="2025-11-20"
+/>
+
+## Context
+
+At OpenLM, a data-intensive SaaS platform, documentation had grown organically
+alongside the product, which is to say it had grown wherever someone had a spare
+afternoon. Terminology drifted between services. The same metric answered to
+different names in different views. And it was genuinely difficult to see how
+data moved from the collectors, through the orchestration layer, to the
+dashboards people made decisions with.
+
+## Audience and problem
+
+Three audiences wanted three different things from the same pages.
+
+| Audience | Needed | Was getting |
+| --- | --- | --- |
+| Engineers | A reliable reference for entities, APIs and data flows | Prose describing features, not structures |
+| Support and customer-facing teams | Shared definitions of metrics | Definitions that varied with whoever wrote the article |
+| Non-technical stakeholders | Answers without decoding internal jargon | Internal jargon |
+
+The failure was not that pages were missing. It was that nobody could be certain
+two reports counting the same-sounding thing were counting the same thing.
+
+## My approach
+
+Working with engineers, product managers and support, I redesigned the
+information architecture around the data itself rather than around the table of
+contents.
+
+- **Mapped the main entities and data flows** across services before writing any
+  page. The map became the argument for the structure, and the thing I could hand
+  to someone to disagree with, which is how you find out what is actually true.
+- **Settled the vocabulary**: one agreed name per concept, entity and metric, with
+  rejected names recorded rather than deleted so someone searching the old word
+  still arrives.
+- **Designed a structure** for documentation and data topics so related material
+  clusters predictably instead of by author.
+- **Introduced metadata and tagging standards** applied consistently across the
+  set: owner, audience, status, review date. This is what made the documentation
+  auditable: it became possible to ask which pages were unowned or overdue
+  instead of guessing.
+- **Wrote down the governance**: ownership, review cadence and change path for
+  each definition. Including the last mile: how an approved change reaches the
+  product and the help centre, not just the reference.
+
+## Why this is the precondition for automation
+
+This project is the reason I front-load structure. Once the entities were mapped
+and each concept had one agreed name with an owner, two things became possible
+that had not been before:
+
+- **The mechanical checks became writable.** "Find every page that uses a
+  non-preferred name" is only a query if a preferred name exists.
+- **Drafting became safely delegable.** An agent handed a diff plus a settled
+  vocabulary produces a reviewable draft. The same agent handed a set of pages
+  where one concept has three names will use all three, faster, across more pages.
+
+Structure first is not an aesthetic preference. It is what decides whether
+automation compounds or just accelerates the mess. The split I use now between
+agent-drafted and human-decided work is on [the practice page](/practice).
+
+## Outcome and impact
+
+Technical and non-technical users now find accurate, current information about
+data structures, APIs, metrics and governance rules in one place.
+Misunderstandings dropped and onboarding accelerated, because new engineers could
+read the data model instead of reverse-engineering it. Reporting work could rely
+on one definition per indicator. Documentation became a reference for
+data-related decisions rather than a feature catalogue.
+
+## What this sample demonstrates
+
+- Information architecture for data-intensive products, from entity mapping
+  through to metadata standards
+- Definitions and structure that hold up under daily use rather than under review
+- Governance design that keeps meaning consistent as the product evolves

@@ -1,0 +1,90 @@
+---
+id: terminology-consistency-at-scale
+slug: /terminology-consistency-at-scale
+title: Catching inconsistency before a customer does
+sidebar_label: Consistency at scale
+sidebar_position: 4
+description: Building the shared source of truth and the automated review gates that catch a naming mismatch between product UI, docs and the help centre at review time instead of in a support ticket.
+keywords:
+  - terminology management
+  - documentation review gates
+  - automated documentation checks
+  - content consistency
+  - docs CI
+image: /img/social-card.png
+---
+
+import CaseStudySchema from '@site/src/components/CaseStudySchema';
+
+<CaseStudySchema
+  headline="Catching inconsistency before a customer does"
+  description="A shared source of truth for product terms, plus the review checkpoints and automated pre-release checks that flag a mismatch before it reaches a customer."
+  datePublished="2025-11-20"
+/>
+
+## Context
+
+A product shipping to several markets had a quiet consistency problem. The same
+feature answered to different names across in-product strings, product copy and
+the help centre. Whoever wrote a page resolved the ambiguity themselves, and the
+next person resolved it differently.
+
+Nobody had made a mistake. There was simply no artefact whose job it was to
+remember the decision, and no step in the release that would have noticed.
+
+## Audience and problem
+
+Product managers needed confidence that documentation and UI strings would stay
+aligned as features shipped. Support needed to stop fielding tickets that were
+really naming collisions. And anyone writing needed a single place to look up
+what a thing was called, because the terms that get reinvented are exactly the
+ones where the reasoning was never written down.
+
+## My approach
+
+The fix was not a style guide. It was making the correct answer cheaper to find
+than to re-derive, and then making the release notice when something disagreed.
+
+- **One record per term**, with the preferred name, the rejected alternatives,
+  and (the load-bearing part) *why* it was resolved that way. The reasoning is
+  what stops the question being reopened every quarter.
+- **A content freeze contract** so downstream work starts from stable source
+  rather than a moving target, with the freeze date owned and published instead of
+  merely preferred.
+- **Review checkpoints and an approval matrix** showing who signs off on a naming
+  change, so *can we rename this* is a process rather than a negotiation.
+- **Automated pre-release checks** that flag stale pages, orphaned terms and
+  strings that no longer match the agreed name. This is the part that scales:
+  the decision is human, but finding the forty places that disagree is not.
+
+## Where the automation went
+
+The consistency checks were the first place I moved work from people to a
+pipeline, and the pattern has held everywhere since:
+
+| Step | Owner |
+| --- | --- |
+| Decide the preferred name and record why | Human, with a named owner |
+| Find every place that disagrees | Automated, on every pull request |
+| Judge whether a flagged difference is intentional | Human, at review |
+| Flag pages past their review date | Automated, before release |
+
+Automating step 2 is what made steps 1 and 3 affordable. It is also the reason
+the same setup absorbed AI-drafted content later without changing shape. A
+machine-written page is just another change that has to pass the same gate. I
+have written up how I extend that to agents on
+[the practice page](/practice).
+
+## Outcome and impact
+
+Naming drift is now caught at review time rather than after a customer complaint,
+and the release has a step whose job is to notice. Writers work from real context
+(definitions, screenshots and examples) instead of guessing, which improves
+both speed and consistency for the same effort.
+
+## What this sample demonstrates
+
+- Review and governance design that scales with the product roadmap rather than
+  with headcount
+- Automated checks as a first-class part of a documentation pipeline
+- Process design that treats naming as part of the product, not an afterthought

@@ -1,212 +1,401 @@
-.pageRoot {
-  background: transparent;
-}
+/* Homepage. Layout idiom: metadata lives in the left margin, like the
+   grammatical apparatus of a dictionary entry, and prose sits in the measure. */
 
-:root {
-  --arcade-bg: transparent;
-  --arcade-card: rgba(255, 255, 255, 0.7);
-  --arcade-border: rgba(15, 27, 70, 0.12);
-  --arcade-accent: #ff7ad9;
-  --arcade-text-main: #0f1b46;
-  --arcade-text-muted: #6b7280;
-}
-
-.heroContainer {
-  background: rgba(255, 255, 255, 0.65);
-  color: var(--arcade-text-main);
-  padding: 4rem 2rem;
-  text-align: center;
-  border-bottom: 1px solid var(--arcade-border);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 20px 45px rgba(15, 27, 70, 0.15);
-}
-
-.heroTitle {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  color: #1b1534;
-  position: relative;
-  display: inline-block;
-  padding: 0 0.5rem;
-  overflow: hidden;
-}
-
-.heroSubtitle {
-  font-size: 1.25rem;
-  color: var(--arcade-text-muted);
-  max-width: 600px;
-  margin: 0 auto 2rem;
-}
-
-.buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-
-.heroCodeBlock {
-  text-align: left;
-  max-width: 700px;
+.shell {
+  max-width: var(--w-content);
   margin: 0 auto;
-  border-radius: 12px;
-  overflow: auto;
+  padding: 0 var(--gutter);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  letter-spacing: var(--tr-meta);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 var(--space-lg);
+}
+
+.eyebrow span {
+  margin: 0 0.4em;
+  opacity: 0.5;
+}
+
+/* --- hero ---------------------------------------------------------------- */
+
+.hero {
   width: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  -webkit-overflow-scrolling: touch;
-}
-
-.tabsSection {
-  background: rgba(255, 255, 255, 0.5);
-  padding: 4rem 2rem;
-  color: var(--arcade-text-main);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid var(--arcade-border);
-}
-
-.tabsContainer {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--arcade-border);
-  border-radius: 16px;
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 var(--section-y);
   overflow: hidden;
-  box-shadow: 0 25px 45px rgba(15, 27, 70, 0.15);
 }
 
-.tabMenu {
+/* The one piece of atmosphere on the site: the ghost of the old nebula,
+   turned down until it reads as paper rather than decoration. The gradient
+   centre has to sit inside the hero box, or it renders off-screen entirely. */
+.heroWash {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: min(760px, 90vh);
+  background: radial-gradient(
+    54% 62% at 74% 24%,
+    var(--accent-wash-strong) 0%,
+    var(--accent-wash) 46%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero .shell {
+  position: relative;
+  z-index: 1;
+}
+
+.display {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--arcade-border);
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.tabButton {
-  padding: 1.5rem;
-  text-align: left;
-  background: transparent;
-  border: none;
-  color: var(--arcade-text-muted);
+  gap: 0.18em;
+  margin: 0;
   font-weight: 600;
-  font-size: 1.15rem;
-  line-height: 1.3;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid var(--arcade-border);
 }
 
-.tabButton:hover {
-  color: var(--arcade-text-main);
-  background: rgba(255, 255, 255, 0.4);
+.displayName {
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  color: var(--ink);
 }
 
-.activeTab {
-  background: rgba(255, 255, 255, 0.8);
-  color: var(--arcade-accent);
-  border-left: 4px solid var(--arcade-accent);
+.displayRole {
+  font-size: clamp(1.7rem, 3.9vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: var(--tr-display);
+  color: var(--ink-3);
+  font-weight: 600;
+  max-width: 24ch;
 }
 
-.tabContent {
-  padding: 3rem;
+.thesis {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lead);
+  line-height: 1.52;
+  color: var(--ink-2);
+  max-width: 42ch;
+  margin: var(--space-lg) 0 0;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg) var(--space-xl);
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+}
+
+.textAction {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45em;
+}
+
+.textAction:hover {
+  color: var(--accent);
+}
+
+.textAction span {
+  transition: translate 180ms var(--ease);
+}
+
+.textAction:hover span {
+  translate: 3px 0;
+}
+
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+  list-style: none;
+  margin: var(--space-2xl) 0 0;
+  padding: var(--space-lg) 0 0;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--tr-meta);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* Interpuncts only while the list is on one line; a wrapped separator lands at
+   the start of a line and reads as a bullet. */
+@media (min-width: 560px) {
+  .credentials li + li::before {
+    content: '·';
+    margin-right: var(--space-lg);
+    opacity: 0.5;
+  }
+}
+
+/* --- sections ------------------------------------------------------------ */
+
+.section {
+  width: 100%;
+  padding: var(--section-y) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.sectionAlt {
+  background: var(--paper-sunken);
+}
+
+.sectionHead {
+  margin-bottom: var(--space-2xl);
+}
+
+.sectionHead h2 {
+  margin: 0;
+  font-size: var(--fs-h2);
+  letter-spacing: var(--tr-display);
+}
+
+.sectionNote {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  color: var(--ink-3);
+  margin: var(--space-sm) 0 0;
+  max-width: 52ch;
+}
+
+/* --- selected work ------------------------------------------------------- */
+
+.workList,
+.writingList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.workRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  gap: var(--space-lg) var(--space-2xl);
+  padding: var(--space-xl) var(--space-2xl) var(--space-xl) var(--space-md);
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  transition: background 200ms var(--ease);
+}
+
+.workRow:hover {
+  background: var(--accent-wash);
+  color: inherit;
+}
+
+.workMeta {
+  grid-column: 1;
+  grid-row: 1 / span 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: var(--space-2xs);
+  margin: 0.35rem 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--tr-meta);
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: var(--ink-2);
 }
 
-.marqueeSection {
-  padding: 2rem 0;
-  background: rgba(255, 255, 255, 0.45);
-  overflow: hidden;
-  white-space: nowrap;
-  border-bottom: 1px solid var(--arcade-border);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+.workArtefacts {
+  color: var(--ink-3);
+  opacity: 0.8;
 }
 
-.marqueeContainer {
-  display: inline-block;
-  animation: scroll 20s linear infinite;
+.workTitle {
+  grid-column: 2;
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: var(--tr-heading);
+  color: var(--ink);
+  max-width: 34ch;
 }
 
-.marqueeItem {
-  display: inline-block;
-  margin: 0 2rem;
-  font-weight: bold;
-  color: var(--arcade-text-muted);
-  font-size: 1.2rem;
-  opacity: 0.7;
+.workSummary {
+  grid-column: 2;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 62ch;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.workArrow {
+  position: absolute;
+  top: var(--space-xl);
+  right: var(--space-md);
+  font-size: 1.1rem;
+  color: var(--ink-3);
+  transition: translate 200ms var(--ease), color 200ms var(--ease);
 }
 
-.heroTitle::after {
-  content: '';
-  /* still there if needed? we replaced? remove? */
+.workRow:hover .workArrow,
+.writingRow:hover .workArrow {
+  translate: 4px 0;
+  color: var(--accent);
 }
 
-.heroTitle::after,
-.heroTitle:hover::after,
-.heroTitle:focus-visible::after {
-  display: none;
+/* --- what I build -------------------------------------------------------- */
+
+.practice {
+  margin: 0 0 var(--space-2xl);
+  border-top: 1px solid var(--rule);
 }
 
+.practiceRow {
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  gap: var(--space-xs) var(--space-2xl);
+  padding: var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--rule);
+}
 
-@media (max-width: 768px) {
-  .heroTitle {
-    font-size: 2.5rem;
-  }
+.practiceRow dt {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
 
-  .buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
+.practiceLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--tr-meta);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
 
-  .buttons :global(.button) {
-    width: 100%;
-    text-align: center;
-  }
+.practiceTerm {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: var(--tr-heading);
+  color: var(--ink);
+}
 
-  .heroCodeBlock {
-    max-width: 100%;
-  }
+.practiceRow dd {
+  grid-column: 2;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
 
-  .tabsContainer {
+/* --- writing ------------------------------------------------------------- */
+
+.writingRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  gap: var(--space-2xs) var(--space-2xl);
+  align-items: baseline;
+  padding: var(--space-lg) var(--space-2xl) var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  transition: background 200ms var(--ease);
+}
+
+.writingRow:hover {
+  background: var(--accent-wash);
+  color: inherit;
+}
+
+.writingDate {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--tr-meta);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.writingTitle {
+  font-size: 1.0625rem;
+  font-weight: 550;
+  letter-spacing: var(--tr-heading);
+  color: var(--ink);
+  max-width: 46ch;
+}
+
+.writingRow .workArrow {
+  top: var(--space-lg);
+}
+
+/* --- contact ------------------------------------------------------------- */
+
+.contact {
+  padding-bottom: calc(var(--section-y) * 1.15);
+}
+
+.contactHeading {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: var(--ink);
+  max-width: 32ch;
+  margin: 0;
+}
+
+/* --- narrow ------------------------------------------------------------- */
+
+@media (max-width: 860px) {
+  .workRow,
+  .practiceRow,
+  .writingRow {
     grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    padding-right: var(--space-xl);
   }
 
-  .tabMenu {
+  .workMeta {
+    grid-column: 1;
+    grid-row: auto;
     flex-direction: row;
-    overflow-x: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--arcade-border);
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-md);
+    margin-top: 0;
   }
 
-  .tabButton {
-    min-width: 150px;
-    border-bottom: none;
-    border-right: 1px solid var(--arcade-border);
-    font-size: 1.05rem;
+  .workTitle,
+  .workSummary,
+  .practiceRow dt,
+  .practiceRow dd {
+    grid-column: 1;
   }
 
-  .activeTab {
-    border-left: none;
-    border-bottom: 4px solid var(--arcade-accent);
+  .displayRole {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroActions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .heroActions :global(.button) {
+    text-align: center;
   }
 }

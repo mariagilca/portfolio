@@ -1,8 +1,11 @@
 mariag:
   name: Maria Gilca
-  title: Technical Writer · Docusaurus · Docs-as-code
-  url: https://www.linkedin.com/in/anamaria-gilca
-  image_url: https://avatars.githubusercontent.com/u/000000001
+  title: Technical writer & information architect
+  # Feeds the auto-generated BlogPosting JSON-LD and the article:author meta tag.
+  # An author with no url produces an incomplete Person node.
+  url: https://mariagilca.github.io/portfolio/about/
+  image_url: https://github.com/mariagilca.png
+  email: mariag@voix.com
   socials:
-    linkedin: anamaria-gilca
+    linkedin: maria-gilca
     github: mariagilca

@@ -3,28 +3,25 @@
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /**
- * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
-
- @type {import('@docusaurus/plugin-content-docs').SidebarsConfig}
+ * The sidebar hierarchy is also the source of the BreadcrumbList structured data
+ * on every doc page, so it is shaped as a reader's path rather than a file
+ * listing. The category carries a `link` deliberately: Docusaurus drops
+ * breadcrumb items that have no href, and a linkless category would leave the
+ * case studies with a single-item (invalid) breadcrumb trail.
+ *
+ * @type {import('@docusaurus/plugin-content-docs').SidebarsConfig}
  */
 const sidebars = {
-  tutorialSidebar: [
+  workSidebar: [
     {
       type: 'category',
-      label: 'Portfolio',
+      label: 'Selected work',
+      link: {type: 'doc', id: 'overview'},
       collapsed: false,
       items: [
-        'portfolio/overview',
-        'portfolio/sample-openlm-architecture',
-        'portfolio/sample-docusaurus-ci-cd',
-        'portfolio/sample-localization-workflow',
+        'information-architecture-data-platform',
+        'process-documentation-decision-trees',
+        'terminology-consistency-at-scale',
       ],
     },
   ],

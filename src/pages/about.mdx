@@ -1,54 +1,129 @@
 ---
-title: About Maria Gilca
+title: About
+description: Maria Gilca is a technical writer and information architect for data-intensive software, building documentation pipelines where agents draft, CI gates catch errors, and git governs every change.
+keywords:
+  - Maria Gilca
+  - technical writer
+  - information architect
+  - AI assisted documentation
+  - documentation engineer
+image: /img/social-card.png
+hide_table_of_contents: true
 ---
 
-# About Maria
+import ProfileSchema from '@site/src/components/ProfileSchema';
 
-I’m Maria Gilca, a technical writer who treats documentation as product design. I partner with teams shipping complex developer platforms and make sure their docs keep pace with every pull request.
+<ProfileSchema dateCreated="2025-11-20" dateModified="2026-08-03" />
 
-## Specialties
+# About Maria Gilca
 
-- **Docs-as-code coaching** – branch strategies, templates, and linters that give writers autonomy while keeping engineering confidence high.
-- **Docusaurus v3 expertise** – custom themes, MDX component systems, and visual storytelling that mirrors product UI.
-- **CI/CD and Git flows** – preview builds, automated QA, and release cadences that map to real product launches.
-- **Localization workflows** – SLAs, tooling integrations, and governance that keep global docs shippable.
-- **Architecture visualization** – Figma + MDX diagrams that clarify service relationships.
+I'm a technical writer and information architect. I work on data-intensive
+software, currently at [OpenLM](https://www.openlm.com), where documentation has
+to describe systems that change underneath it.
+
+Most of my work starts as something that doesn't look like a documentation
+problem. Two dashboards disagree. An approval process stalls. The help centre
+describes a feature nobody recognises. Underneath, the same thing is usually true:
+a concept has collected more than one name, and nothing in the system is
+responsible for deciding which one is correct.
+
+## What I actually do
+
+- **Information architecture.** Mapping the entities, data flows and decisions
+  before writing a page, because for a data-heavy product the useful structure
+  follows the data, not the table of contents.
+- **Definitions with owners.** One agreed name per concept, the rejected
+  alternatives kept so old vocabulary still leads somewhere, and the reasoning
+  recorded so the question isn't reopened every quarter.
+- **Metadata standards** that make a documentation set auditable: which pages are
+  unowned, which are overdue for review, which describe a service that no longer
+  exists.
+- **Governance covering the last mile**: how an approved change reaches the
+  product and the help centre, not just the page where someone noticed the error.
+- **The pipeline itself.** Docs-as-code with real gates: link and anchor
+  validation, terminology checks, staleness flags, all in CI where the author of a
+  change can't wave them through.
+
+## How I work with AI
+
+I use AI daily in my own work, I build agent workflows against docs repositories,
+and I've taken that from personal tooling into a team's process, which is a
+different and harder problem, because it needs review gates other people trust.
+
+The short version of what I've learned: **generating documentation stopped being
+the hard part, and verifying it didn't.** So the bottleneck moved, and the system
+has to move with it.
+
+- **Agents are scoped, not general.** I run them with Claude Code, tools limited
+  to the docs directory, and an MCP server for the issue tracker when the agent
+  needs the context behind a change. The task definition lives in the repo and is
+  reviewed like code, because it's the thing that decides what the agent is
+  allowed to conclude.
+- **The most valuable instruction is the one that says stop.** An agent facing a
+  concept with no agreed name will name it. A plausible invented name is worse
+  than a blocked pull request, because it propagates before anyone notices it was
+  never decided.
+- **Git is the control plane.** Every machine-written change arrives as a pull
+  request with a provenance trail. Nothing writes to `main`, and a revert is one
+  command rather than an archaeology project.
+- **Automate the mechanical checks so humans review claims.** When draft volume
+  goes up tenfold, review is the constraint. A reviewer's attention should go to
+  whether something is true, not to dead links and trailing whitespace.
+- **AI amplifies the information architecture you already have.** If a concept has
+  three names and no owner, an agent will use all three, faster, across more
+  pages. This is why I front-load structure: it decides whether automation
+  compounds or just accelerates the mess.
+
+I've written the full split (what I hand to an agent, what CI has to catch,
+and what I refuse to automate) on [the practice page](/practice).
+
+## How I work with teams
+
+I interview engineers, product managers and support, and I read incident notes,
+which are the most honest documentation an organisation has, because they record
+what happened rather than what was supposed to. Then I write something, show it to
+the person who will have to use it, and find out where it breaks.
+
+The part I care about most is what happens after I leave. Documentation only one
+person can maintain is a liability wearing a deliverable's clothes, so the
+governance and the metadata are not paperwork around the writing; they *are* the
+writing.
 
 ## Credentials
 
 <article className="badge-card">
   <img
     className="badge-card__img"
-    src="https://api.badgr.io/public/badges/DEPi4as-Qhqpk8lurD6fOQ/image"
-    alt="Foundations of Professional Technical Writing badge"
-    width="140"
-    height="140"
+    src="https://badges.parchment.com/public/assertions/AXRnvaiXQl-dGx4qmeer1Q/image"
+    alt="Digital badge for the Certificate in Professional Technical Writing, issued by University of Washington Professional & Continuing Education"
+    width="96"
+    height="96"
     loading="lazy"
   />
   <div className="badge-card__content">
-    <h3>Foundations of Professional Technical Writing</h3>
-    <p>
-      Issued by{' '}
-      <a href="https://www.pce.uw.edu/" target="_blank" rel="noopener">
-        University of Washington Professional & Continuing Education
-      </a>
-    </p>
-    <p className="badge-card__meta">Issued 2025-12-11</p>
+    <h3>Certificate in Professional Technical Writing</h3>
+    <p>University of Washington Professional &amp; Continuing Education</p>
+    <p className="badge-card__meta">Issued 15 June 2026</p>
     <p className="badge-card__desc">
-      Completed coursework in technical communication deliverables, content strategy, and
-      portfolio-ready documentation.
+      A certificate program covering the formats and requirements of technical
+      writing across industries, user-centred and visual design, style and
+      structure in technical communication, industry-standard tools, usability
+      testing, and publication formats.
     </p>
     <a
       className="badge-card__link"
-      href="https://api.badgr.io/public/assertions/7w41lWqYR_ChQkB4_N4j1g"
+      href="https://badges.parchment.com/public/assertions/AXRnvaiXQl-dGx4qmeer1Q"
       target="_blank"
       rel="noopener"
     >
-      Verify badge
+      Verify this credential
     </a>
   </div>
 </article>
 
-## UX writing focus
+## Elsewhere
 
-Every deliverable is anchored in user outcomes: onboarding paths, troubleshooting clarity, and actionable visuals that help people reach success faster.
+- [LinkedIn](https://www.linkedin.com/in/maria-gilca/)
+- [GitHub](https://github.com/mariagilca)
+- [Where AI belongs in a documentation pipeline](/practice)
+- [Get in touch](/contact)

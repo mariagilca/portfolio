@@ -1,0 +1,75 @@
+---
+title: I rebuilt my docs site to be boring on purpose
+description: I spent a while arguing that technical documentation could carry gradients and glassmorphism. Then I rebuilt this site without them, and here is what actually survived the rewrite.
+date: 2026-08-03
+tags: [design, accessibility, ux-writing]
+authors: mariag
+keywords:
+  - documentation design
+  - technical documentation typography
+  - accessibility
+  - docs design system
+image: /img/social-card.png
+---
+
+For a while I argued that technical documentation could carry a bit of
+atmosphere (nebula gradients, glass panels, motion on scroll) as long as you
+kept the contrast honest. I built this site that way, and I don't think the
+argument was wrong exactly. It was just answering a question nobody had asked.
+
+<!-- truncate -->
+
+Then I rebuilt the site with almost none of it. Below is what survived, because
+those parts turned out not to be about decoration at all.
+
+## Structure first, and it turns out that was the whole thing
+
+The original version of this advice was "break pages into predictable sections,
+*then* layer gradients behind them." The first half was doing all the work. Once
+the hierarchy is genuinely obvious, the gradient adds nothing a reader needs; and
+if the hierarchy isn't obvious, no amount of atmosphere rescues it.
+
+What replaced the gradients was spacing and one typographic rule: headings in one
+family, running prose in another, metadata in a third, and never mix them up. On
+this site sans is the interface voice, a serif carries every piece of prose, and
+mono is reserved for metadata: owner, date, term ID. A reader can now tell what
+*kind* of thing they're looking at before they read a word of it. That's the job
+I had been trying to give a background.
+
+## Transparency was never the accessible option
+
+The old post said glassmorphism in docs is "tricky" because we render code
+blocks, tables and diagrams over it, and recommended compensating with thicker
+borders and drop shadows.
+
+Read that back and it's a description of fighting your own design. Every
+compensating detail (heavier borders, stacked shadows, raised text
+contrast) existed to undo a problem transparency introduced. Solid surfaces and a single
+hairline border cost nothing and need no compensation. Contrast ratios stopped
+being something I had to check defensively and started being a property of the
+palette.
+
+## Performance is a content decision
+
+The version of this site you're reading loads no web fonts. Not because
+self-hosting is hard, but because I sell documentation systems for teams who care
+whether their docs are fast, and a portfolio that spends 200kB on typefaces is
+making an argument against its author. The platform stacks render well, and the
+budget went to things a reader can actually use.
+
+The animated background went for the same reason. It was the most-praised thing
+on the old site and the least useful: it competed with first paint on exactly the
+page where someone decides whether to keep reading.
+
+## Document the design system like any other feature
+
+This one I'd keep verbatim. Examples, dos and don'ts, and token references belong
+in the repo, so a future contributor stays consistent without asking a designer.
+The only change is that there is far less to document now, which is its own kind
+of win, and roughly the point.
+
+---
+
+The honest summary: I was solving for how the site felt to build rather than how
+it felt to read. Those aren't the same problem, and only one of them is the
+reader's.

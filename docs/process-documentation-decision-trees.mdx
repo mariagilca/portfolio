@@ -1,0 +1,86 @@
+---
+id: process-documentation-decision-trees
+slug: /process-documentation-decision-trees
+title: Writing down a process that only existed in conversation
+sidebar_label: Process documentation
+sidebar_position: 3
+description: Turning an undocumented approval chain into procedures and decision trees by interviewing subject-matter experts, finding where ownership was genuinely unclear, and validating each draft against real cases.
+keywords:
+  - process documentation
+  - decision trees
+  - subject matter expert interviews
+  - standard operating procedures
+  - technical writing
+image: /img/social-card.png
+---
+
+import CaseStudySchema from '@site/src/components/CaseStudySchema';
+
+<CaseStudySchema
+  headline="Writing down a process that only existed in conversation"
+  description="Turning an undocumented approval chain into procedures, decision trees and worked examples that people could act on."
+  datePublished="2025-11-20"
+/>
+
+## Context
+
+A team I supported relied on a complex set of technical procedures and approval
+steps that had never been written down end to end. Tribal knowledge filled the
+gaps. Onboarding was slow, the same questions kept reaching support, and the
+answer usually depended on which colleague you happened to ask.
+
+## Audience and problem
+
+Internal contributors needed step-by-step guidance so they could act with
+confidence rather than checking first. External users needed the process to be
+transparent enough to see who was responsible for which data and which decisions
+at each step. And the subject-matter experts needed something they could maintain
+without rewriting it from scratch every quarter, which meant the format mattered
+as much as the content.
+
+## My approach
+
+I treated the procedure itself as the artefact to design, not just to describe.
+
+- **Analysed the existing process** by reading specs, tickets and incident notes.
+  Incident notes are the most honest documentation an organisation has: they
+  record what actually happened rather than what was supposed to.
+- **Interviewed subject-matter experts** to surface the decisions and edge cases
+  that lived only in conversation.
+- **Identified where ownership was genuinely unclear**, as opposed to merely
+  undocumented. These are different problems, and writing cannot fix the first
+  one. Naming them was part of the deliverable.
+- **Built step-by-step procedures, decision trees and example-based
+  explanations**, so a reader facing an unusual case could reason about it rather
+  than search for an exact match.
+- **Validated each draft with the people who would use it**, then iterated until
+  it held up against real cases instead of the tidy ones.
+
+## Outcome and impact
+
+A previously opaque process became transparent and manageable. Users made
+decisions with more confidence, support requests dropped, and the organisation
+gained a clearer view of who owns which data and actions at each step. The
+guidance became a shared reference used in onboarding, in audits and in
+day-to-day work. The test of process documentation is whether anyone opens it
+after launch, and this one is opened.
+
+Keeping it accurate is a governance question rather than a writing one, which is
+why the procedures carry the same metadata (owner, review date) as the rest of
+the documentation set, and why a stale review date is flagged by the pipeline
+rather than noticed by someone.
+
+This is also the kind of content I am most reluctant to let an agent draft. The
+interview *was* the work: what an agent can produce from existing material is a
+description of the process as previously documented, and the whole problem here
+was that no such document existed. Drafting is safe when the answer already
+exists somewhere readable. That argument is on [the practice page](/practice).
+
+## What this sample demonstrates
+
+- Translating complex technical requirements into guidance that holds up in real
+  use
+- Comfort interviewing experts and structuring tacit knowledge into something
+  maintainable
+- Decision trees, procedures and worked examples as primary documentation forms,
+  not afterthoughts
